@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css">
+<center>
+<nav id="menu">
+<ul>
+<li><a href="index.html" onmouseover="style = 'color: #d400ff;'" onmouseleave="style = 'color: blue;'" id="selected">Intro </a></li>
+<li><a href="chapterOne.html" onmouseover="style = 'color: #d400ff;'" onmouseleave="style = 'color: purple;'" style="color: purple;">Chapter I </a></li>
+<li><a href="chapterTwo.html" onmouseover="style = 'color: #d400ff;'" onmouseleave="style = 'color: blue;'">Chapter II </a></li>
+<li><a href="chapterThree.html" onmouseover="style = 'color: #d400ff;'" onmouseleave="style = 'color: blue;'">Chapter III </a></li>
+<li><a href="chapterFour.html" onmouseover="style = 'color: #d400ff;'" onmouseleave="style = 'color: blue;'">Chapter IV </a></li>
+<li><a href="chapterFive.html" onmouseover="style = 'color: #d400ff;'" onmouseleave="style = 'color: blue;'">Chapter V </a></li>
+</ul>
+</nav>
+</center>
+
+<title> Chapter I | WebCode</title>
+
+</head>
+<body>
+<center>
+<div id="sidemenu">
+<ul id="lessons">
+<li class="option" value="1" onclick="click(1)">Lesson 1</li>
+<li class="option" value="2" onclick="click(2)">Lesson 2</li>
+<li class="option" value="3" onclick="click(3)">Lesson 3</li>
+<li class="option" value="4" onclick="click(4)">Lesson 4</li>
+<li class="option" value="5" onclick="click(5)">Lesson 5</li>
+<li class="option" value="6" onclick="click(6)">Lesson 6</li>
+<li class="option" value="7" onclick="click(7)">Lesson 7</li>
+<li class="option" value="8" onclick="click(8)">Lesson 8</li>
+<li class="option" value="9" onclick="click(9)">Lesson 9</li>
+<li class="option" value="10" onclick="click(10)">Lesson 10</li>
+</ul>
+</div>
+<h1 class="chaptertitle">CHAPTER I</h1>
+</center>
+<div id="lessonOne" class="lesson" value="1">
+<h1 class="lessontitle">LESSON 1</h1>
+<img src="codes/1.png" width="600" height="370"></img>
+
+<br><br>
+<h3>The code above, is a basic html layout, make a new
+file named index.html, and put it in a new folder named "Learn1ng WebC0de."
+Then, add 2 more new files names styles.css, and script.js inside the same folder.
+Copy the code in the image into index.html, in the rest of this lesson, you will
+learn what each line of code means.</h3>
+<br><br>
+
+<img src="codes/2.png" width="600" height="370"></img>
+<br><br>
+<h3>The !DOCTYPE html code in this code tells the document
+it is the newest version of html. The html and /html tags start and
+end the page. Tags or elements are the things inside the <>.
+End tags have a "/" in the beginning of the tag to represent an
+end of an element.</h3>
+<br><br>
+<h1 class="box">The ... in the middle, just represents, that there is more code in the middle.</h1>
+<br><br>
+
+<img src="codes/3.png" width="600" height="370"></img>
+<br><br>
+<h3>
+The Head Tag has everything that will run before all the other elements, yu]ou put elements like
+these in the head tag. The title element names the document. The Link and Script elements
+link our css and js to our html file.
+</h3>
+<br><br>
+
+<img src="codes/4.png" width="600" height="370"></img>
+<br><br>
+<h3>
+Our body element contains all our content that is not in the head element. The h1 element stands for Heading
+One, and the p element stands for paragraph
+</h3>
+<br><br>
+</div>
+
+<div id="lessonTwo" class="lesson" value="2">
+</div>
+
+<div id="lessonThree" class="lesson" value="3">
+</div>
+
+<div id="lessonFour" class="lesson" value="4">
+</div>
+
+<div id="lessonFive" class="lesson" value="5">
+</div>
+
+<div id="lessonSix" class="lesson" value="6">
+</div>
+
+<div id="lessonSeven" class="lesson" value="7">
+</div>
+
+<div id="lessonEight" class="lesson" value="8">
+</div>
+
+<div id="lessonNine" class="lesson" value="9">
+</div>
+
+<div id="lessonTen" class="lesson" value="10">
+</div>
+<script>
+
+window.addEventListener('onclick', click)
+
+function click(optionValue) {
+var options = document.getElementsByClassName('option').onclick;
+var lessons = document.getElementsByClassName('lesson');
+var clickValue = optionValue;
+if(lessons.value = optionValue) {
+lessons.style.display = 'block';
+} else {
+lessons.style.display = 'none';
+}
+}
+</script>
+
+</body>
+</html>

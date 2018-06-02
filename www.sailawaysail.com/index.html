@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link href="sailaway-1.css" rel="stylesheet" />
+		<audio autoplay="" autostart="true" loop="true" src="Master.wav" volume="60"></audio>
+		<link href="sailaway-1.css" rel="stylesheet" />
+		<title>Welcome to Sail Away</title>
+		<script>
+			window.onload = function() {document.getElementById('body').style.backgroundColor = '#7adbff';}
+			window.ondblclick = function() {
+				var random = Math.floor(Math.random() * 254)
+				var rando = Math.floor(Math.random() * 254)
+				var rand = Math.floor(Math.random() * 254)
+				var randomRGB = 'rgb(' + random + ', ' + rando + ', ' + rand + ')' 
+				document.getElementById('body').style.backgroundColor = randomRGB;
+			}
+		</script>
+	</head>
+	<nav>
+		<center>
+			<ul>
+				<li><a href="index.html">HOME </a></li>
+				<li><a href="SA-CATALINA.html">CATALINA </a></li>
+				<li><a href="SA-FLYINGSCOT.html">FLYING SCOT </a></li>
+				<li><a href="SA-LAZER.html">LASER </a></li>
+				<li><a href="SA-LIGHTNING.html">LIGHTNING </a></li>
+				<li><a href="SA-MELGES.html">MELGES </a></li>
+				<li><a href="SA-OPTI.html">OPTI </a></li>
+			</ul>
+		</center>
+	</nav>
+	<body id="body">
+		<div id="mainTitle">
+			<center>
+				<h1>Welcome to Sail Away</h1>
+			</center>
+		</div>
+		<div id="subtitle">
+			<h6 style="color: red;">This Website talks about the various kinds of sail boats. In order to see more details on each boat, click on the different links in the menu.</h6>
+		</div>
+		<br />
+		<div id="link-knots">
+			<center>
+				<a href="http://www.animatedknots.com/" style="font-color: #df3ce8; text-decoration: none; font-size: 20px; font-weight: bold;" target="_blank">
+					Click here to learn about knots
+				</a>
+			</center>
+		</div>
+		<br />
+		<div id="image">
+			<center>
+				<img height="700" src="kykyjy.JPG" width="800" />
+			</center>
+		</div>
+		<br />
+		<div id="man-over-board">
+			<h2 style="size: 30px;">This is a video recorded by Paul Zantzinger on <a href="https://www.youtube.com/" style="color: red; text-decoration: none;">youtube </a> about a man-over-board drill</h2>
+			<center>
+				<br />
+				<iframe allowfullscreen="" autoplay="" frameborder="4" height="315" src="https://www.youtube.com/embed/hFs13MXhtJ8" volume="0" width="560"></iframe></center>
+			</center>
+		</div>
+		<br />
+		<div id="email">
+			<center>
+				<h2>Send e-mail to the Sail Away community</h2>
+				<form action="mailto:paul@zinger1.com" enctype="text/plain" method="post">Name:<br />
+					<input bgcolor="#b3ffe6" name="name" type="text" /><br />
+					E-mail:<br />
+					<input name="mail" type="text" /><br />
+					Comment:<br />
+					<input length="100px" name="comment" size="100" type="text" /><br />
+					<br />
+					<input type="submit" value="Send" /> <input type="reset" value="Reset" />
+				</form>
+			</center>
+		</div>
+		<br /><br />
+		<div id="footer">
+			<center>
+				<a class="size" href="https://www.ultimatesailing.com/" id="ultimatesailing-link">Click here to see sailing pictures from all around the world </a>
+				<br /><br />
+				<a id="ussailing-link" href="http://www.ussailing.org/"> Click here to become a US Sailor! </a><br />
+				<p style="font-size: 22px; color: #ff8300;">created by Tyler Benko and Paul Zantzinger</p>
+				<p style="font-size: 17px;" onclick="window.location.href = 'http://www.poweredbygearup.com'">powered by GearUp</p>
+			</center>
+		</div>
+	</body>
+</html>

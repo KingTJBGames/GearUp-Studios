@@ -1,0 +1,116 @@
+body.hb1 {
+	background-color: black;
+	font-family: sans-serif;
+	color: #b5f9ff;
+}
+
+nav.menu ul.menu {
+	list-style-type: none; 
+	background-color: #0000CC; 
+	border: 4px solid #00c0ff; 
+	border-radius: 20px; 
+	font-weight: bold; 
+	padding: 16px;
+}
+
+nav.menu ul.menu li.menu {
+	display: inline; 
+	padding-right: 8px; 
+	padding-left: 8px;
+}
+
+nav.menu ul.menu li.menu a.menu {
+	text-decoration: none; 
+	color: #00c0ff; 
+	font-size: 30px;
+}
+
+nav.menu ul.menu li.menu a.menuSel {
+	text-decoration: none; 
+	color: #b5f9ff; 
+	font-size: 30px;
+}
+
+h1.tophead {
+	font-size: 60px; 
+	font-weight: bold;
+}
+
+div.news {
+	background-color: #0000cc; 
+	border: 4px solid #b5f9ff; 
+	font-size: 18px; 
+	border-radius: 12px; 
+	padding: 18px; 
+	font-weight: bold;
+}
+
+a.news {
+	text-decoration: none; 
+	color: red;
+}
+
+audio.news {
+	float: right;
+}
+
+div.AF {
+	background-color: #0000cc; 
+	border: 6px solid #b5f9ff; 
+	font-size: 18px; 
+	border-radius: 30px; 
+	padding: 10px; 
+	font-weight: bold; 
+	color: #b5f9ff;
+}
+
+a.AF {
+	color: #b5f9ff; 
+	font-size: 20px; 
+	text-decoration: none;
+}
+
+li.AF {
+	color: #b5f9ff; 
+	font-size: 20px;
+}
+
+div.song {
+	border: 4px solid gray; 
+	font-size: 12px; 
+	border-radius: 22px; 
+	color: gray; 
+	padding: 20px;
+}
+
+#test {
+	background-color: #0000CC;
+	color: #b5f9ff;
+	border: 0px none red;
+	width: 214px;
+	height: 40px;
+	font-size: 30px;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+	font-weight: bold;
+}
+
+#search {
+	width: 1080px;
+	height: 55px;
+	border: 2px navy outset;
+	border-radius: 40px;
+	background-color: aqua;
+	font-size: 30px;
+}
+
+button.Submit {
+	border-radius: 20px;
+	width: 140px;
+	height: 40px;
+	font-size: 26px;
+	font-weight: bold;
+	color: skyblue;
+	background-color: navy;
+	border: 2px outset skyblue;
+}

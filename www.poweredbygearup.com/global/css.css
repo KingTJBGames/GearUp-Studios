@@ -1,0 +1,64 @@
+body {
+	background-color: black;
+	padding: 30px;
+	color: skyblue;
+	font-family: arial;
+}
+
+html {
+	background-color: blue;
+	border: 50px solid #6060ff;
+	border-right-color: navy;
+	border-left-color: navy;
+}
+
+h1.title {
+	font-size: 60px;
+}
+
+.art-project {
+	border: 9px solid;
+	padding: 20px;
+	border-radius: 20px;
+	font-size: 40px;
+	font-weight: bold;
+	background-color: red;
+	border-color: firebrick;
+	color: firebrick;
+}
+	
+.art-project a {
+	text-decoration: none;
+	color: firebrick;
+}
+
+.game {
+	border: 9px solid;
+	padding: 20px;
+	font-size: 40px;
+	font-weight: bold;
+	background-color: blue;
+	border-color: skyblue;
+	color: skyblue;
+}
+
+.game a {
+	text-decoration: none;
+	color: skyblue;
+}
+
+.video {
+	border: 7px solid;
+	padding: 20px;
+	border-radius: 40px;
+	font-size: 40px;
+	font-weight: bold;
+	background-color: green;
+	border-color: lightgreen;
+	color: lightgreen;
+}
+
+.video a {
+	text-decoration: none;
+	color: lightgreen;
+}

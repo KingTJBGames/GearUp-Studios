@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GearUp | Welcome to the Matrix</title>
+	<style></style>
+	<script></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="menu/javascript.js"></script>
+	<script src="global/javascript.js"></script>
+	<link rel="stylesheet" href="global/css.css">
+	<link rel="stylesheet" href="menu/css.css">
+	<script src="global/javascript.js"></script>
+</head>
+<nav>
+	<!--menu-->
+	<ul id="navigation">
+		<li><a href="index.html">Home</a></li>
+		<li>
+			<select id="music" onchange="hmdv('music')" ondblclick="window.location.href = 'http://www.kingtjbmusic.org'">
+				<option class="music" id="M1" value="http://www.kingtjbmusic.org">Music</option>
+				<option class="music" id="M2" value="http://www.kingtjbmusic.org/TJBM.alert.html">Alert</option>
+				<option class="music" id="M3" value="http://www.kingtjbmusic.org/TJBM.EyeOfPhoenix.html">EoP</option>
+				<option class="music" id="M4" value="http://www.kingtjbmusic.org/TJBM.singles.html">Singles</option>
+				<option class="music" id="M5" value="http://www.kingtjbmusic.org/TJBM.search.html">Search</option>
+			</select>
+		</li>
+		<li>
+			<select id="sailaway" onchange="hmdv('sailaway')" ondblclick="window.location.href = 'http://www.sailawaysail.com'">
+				<option class="sailaway" id="SA1" value="http://sailawaysail.com">Sail Away</option>
+				<option class="sailaway" id="SA2" value="http://sailawaysail.com/SA-CATALINA.html">Catalina</option>
+				<option class="sailaway" id="SA3" value="http://sailawaysail.com/SA-FLYINGSCOT.html">Flying Scot</option>
+				<option class="sailaway" id="SA4" value="http://sailawaysail.com/SA-LAZER.html">Laser</option>
+				<option class="sailaway" id="SA5" value="http://sailawaysail.com/SA-LIGHTNING.html">Lightning</option>
+				<option class="sailaway" id="SA6" value="http://sailawaysail.com/SA-MELGES.html">Melges</option>
+				<option class="sailaway" id="SA7" value="http://sailawaysail.com/SA-OPTI.html">Opti</option>
+			</select>
+		</li>
+		<li>
+			<select id="games" onchange="hmdv('games')" ondblclick="window.location.href = 'games.html'">
+				<option class="games" id="G1" value="games.html">Games</option>
+				<option class="games" id="G2" value="games.kingtjb.html">KingTJB</option>
+			</select>
+		</li>
+		<li>
+			<select id="art" onchange="hmdv('art')" ondblclick="window.location.href = 'art.html'">
+				<option class="art" id="A1" value="art.html">Art</option>
+				<option class="art" id="A2" value="art.kingtjb.html">KingTJB</option>
+			</select>
+		</li>
+		<li>
+			<select id="videos" onchange="hmdv('videos')" ondblclick="window.location.href = 'videos.html'">
+				<option class="videos" id="V1" value="videos.html">Videos</option>
+				<option class="videos" id="V2" value="videos.kingtjb.html">KingTJB</option>
+			</select>
+		</li>
+	</ul>
+</nav>
+<!--/menu-->
+<body>
+	<center>
+		<h1 class="title">GearUp</h1>
+		<h1>Welcome to the Matrix</h1>
+	</center>
+	<div class="art-project" id="alertAlbumCover" onclick="showHideHandler('art1')">
+		Alert Album Cover by
+		<a href="art.kingtjb.html">KingTJB</a>
+		<div id="art1" style="display: none;"> 
+			<br>
+			<center><img src="art/1.jpg" width="30%" height="30%"></center>
+		</div>
+	</div>
+</body>
+</html>

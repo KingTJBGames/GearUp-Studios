@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<body class="hb1">
+
+    <head>
+        <link rel="stylesheet" href="TJBM.css.1.css">
+        <title>
+            KingTJBMusic
+        </title>
+        <nav class="menu">
+            <ul class="menu">
+                <li class="menu">
+                    <a href="index.html" class="menu">Home </a>
+                </li>
+                <li class="menu">
+                    <a href="TJBM.alert.html" class="menu">Alert </a>
+                </li>
+                <li class="menu">
+                    <a href="TJBM.EyeOfPhoenix.html" class="menu">Eye Of Phoenix</a>
+                </li>
+                <li class="menu">
+                    <select id="test" onchange="onSelected()">
+						<option value="Select Song" id="firstopt">Select Song</option>
+                        <option value="SuperCell REMIX">SC/SC2 REMIX</option>
+                        <option value="Beware">Beware</option>
+					</select>
+                </li>
+                <li class="menu">
+                    <a href="TJBM.search.html" class="menu" target="_blank">Search </a>
+                </li>
+                <li class="menu" style="font-size: 20px; color: #3143ff;" align="90%">Coming Soon... </li>
+            </ul>
+        </nav>
+		<script>
+		            function onSelected() {
+                var index = document.getElementById("test").selectedIndex
+                var option = document.getElementById("test").options[index]
+                var albumElm = document.getElementById("albumDownloads")
+                var firstOption = document.getElementById('firstopt')
+                firstOption.text = "All"
+
+                var songs = document.getElementsByClassName('song')
+
+                if (option.value === 'Select Song') {
+                    albumElm.style.display = 'block'
+                } else {
+                    albumElm.style.display = 'none'
+                }
+
+
+                Array.from(songs).forEach((s) => {
+                    var song = s.parentElement
+                    if (song.id === option.value || option.value === 'Select Song') {
+                        song.style.display = "block"
+                    } else {
+                        song.style.display = "none"
+                    }
+                })
+
+            }
+			</script>
+    </head>
+		<div class="AF" id="albumDownloads">
+		<center>
+			<h1>
+				Song Downloads
+			</h1>
+		</center>
+		<ul>
+            <li>
+				SC/SC2 Remix
+			</li>
+			<li>
+				Beware (Coming Soon)
+			</li>
+		</ul>
+	</div>
+	<br/>
+    <div id="SuperCell REMIX">
+        <div class="song" style="background-color: orange; color: firebrick; border-color: tan;">
+            <audio controls class="news">
+                <source align="50%" src="Another-Cell.mp3" type="audio/mpeg">
+            </audio>
+            <h1>KingTJB | Another Cell (SC/SC2 Remix)</h1>
+        </div>
+        <br/>
+        <br/>
+    </div>
+	    <div id="Beware">
+        <div class="song" style="background-color: #111111; color: purple; border-color: #555555;">
+            <audio controls class="news">
+                <source align="50%" src="###.mp3" type="audio/mpeg">
+            </audio>
+            <h1>KingTJB | Beware (coming soon)</h1>
+        </div>
+        <br/>
+        <br/>
+    </div>
+</body>
+
+</html>

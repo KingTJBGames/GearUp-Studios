@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<body class="hb1">
+
+    <head>
+        <link rel="stylesheet" href="TJBM.css.1.css">
+        <title>
+            KingTJBMusic
+        </title>
+        <nav class="menu">
+            <ul class="menu">
+                <li class="menu">
+                    <a href="index.html" class="menu">Home </a>
+                </li>
+                <li class="menu">
+                    <a href="TJBM.alert.html" class="menu">Alert </a>
+                </li>
+                <li class="menu">
+                    <select id="test" onchange="onSelected()">
+                        <option value="Select Song" id="firstopt">Select Song</option>
+                        <option value="Bang">Bang!</option>
+                        <option value="Dark Bass">Dark Bass</option>
+                        <option value="Emerald Eye">Emerald Eye</option>
+                        <option value="Eye of Phoenix">Eye of Phoenix</option>
+                        <option value="Rise of Power">Rise of Power</option>
+                        <option value="Run">Run</option>
+                        <option value="SkyScraper">SkyScraper</option>
+                        <option value="StormCycles">StormCycles</option>
+                    </select>
+                </li>
+                <li class="menu">
+                    <a href="TJBM.singles.html" class="menu">Singles</a>
+                </li>
+                <li class="menu">
+                    <a href="TJBM.search.html" class="menu" target="_blank">Search </a>
+                </li>
+                <li class="menu" style="font-size: 20px; color: #3143ff;" align="90%">Coming Soon... </li>
+            </ul>
+        </nav>
+        <style>
+            #test {
+                background-color: #0000CC;
+                color: #b5f9ff;
+                border: 0px none red;
+                width: 214px;
+                height: 40px;
+                font-size: 30px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            function onSelected() {
+                var index = document.getElementById("test").selectedIndex
+                var option = document.getElementById("test").options[index]
+                var albumElm = document.getElementById("albumDownloads")
+                var firstOption = document.getElementById('firstopt')
+                firstOption.text = "All"
+
+                var songs = document.getElementsByClassName('song')
+
+                if (option.value === 'Select Song') {
+                    albumElm.style.display = 'block'
+                } else {
+                    albumElm.style.display = 'none'
+                }
+
+
+                Array.from(songs).forEach((s) => {
+                    var song = s.parentElement
+                    if (song.id === option.value || option.value === 'Select Song') {
+                        song.style.display = "block"
+                    } else {
+                        song.style.display = "none"
+                    }
+                })
+
+            }
+        </script>
+    </head>
+    <div class="AF" id="albumDownloads">
+        <center>
+            <h1>
+                Eye of Phoenix Album Downloads
+            </h1>
+        </center>
+        <ul style="font-size: 20px;">
+            <li>
+				<a class="AF" href="Eye-Of-Phoenix-Bang!.mp3" download>Bang! </a>
+			</li>
+            <li>Dark Bass - Coming Soon...</li>
+            <li>Emerald Eye - Coming Soon...</li>
+            <li>Eye of Phoenix - Coming Soon...</li>
+            <li>Rise of Power - Coming Soon...</li>
+            <li>Run - Coming Soon...</li>
+            <li>SkyScraper - Coming Soon...</li>
+            <li>StormCycles - Coming Soon...</li>
+        </ul>
+    </div>
+    <br/>
+    <br/>
+    <div id="Bang">
+        <div class="song" style="background-color: red; color: #ff55ff;">
+            <audio controls class="news">
+                <source align="50%" src="Eye-Of-Phoenix-Bang!.mp3" type="audio/mpeg">
+            </audio>
+            <h1>KingTJB | Bang! (coming soon)</h1>
+        </div>
+        <br/>
+        <br/>
+    </div>
+    <div id="Dark Bass">
+        <div class="song" style="background-color: #ff8300; color: red;">
+            <audio controls class="news">
+                <source align="50%" src="EyeOfPhoenix-###.mp3" type="audio/mpeg">
+            </audio>
+            <h1>KingTJB | Dark Bass (coming soon)</h1>
+        </div>
+        <br/>
+        <br/>
+    </div>
+    <div id="Emerald Eye">
+        <div class="song" style="background-color: yellow; color: #92961b;">
+            <audio controls class="news">
+                <source align="50%" src="EyeOfPhoenix-###.mp3" type="audio/mpeg">
+            </audio>
+            <h1>KingTJB | Emerald Eye (coming soon)</h1>
+        </div>
+        <br/>
+        <br/>
+    </div>
+    <div id="Eye of Phoenix">
+        <div class="song" style="background-color: #00ff11; color: blue;">
+            <audio controls class="news">
+                <source align="50%" src="EyeOfPhoenix-###.mp3" type="audio/mpeg">
+            </audio>
+            <h1>KingTJB | Eye of Phoenix (coming soon)</h1>
+        </div>
+        <br/>
+        <br/>
+    </div>
+    <div id="Rise of Power">
+        <div class="song" style="background-color: #00ffed; color: blue;">
+            <audio controls class="news">
+                <source align="50%" src="EyeOfPhoenix-###.mp3" type="audio/mpeg">
+            </audio>
+            <h1>KingTJB | Rise of Power (coming soon)</h1>
+        </div>
+        <br/>
+        <br/>
+    </div>
+    <div id="Run">
+        <div class="song" style="background-color: #2a00ff; color: white;">
+            <audio controls class="news">
+                <source align="50%" src="EyeOfPhoenix-###.mp3" type="audio/mpeg">
+            </audio>
+            <h1>KingTJB | Run (coming soon)</h1>
+        </div>
+        <br/>
+        <br/>
+    </div>
+    <div id="SkyScraper">
+        <div class="song" style="background-color: #b600ff; color: pink;">
+            <audio controls class="news">
+                <source align="50%" src="EyeOfPhoenix-###.mp3" type="audio/mpeg">
+            </audio>
+            <h1>KingTJB | SkyScraper (coming soon)</h1>
+        </div>
+        <br/>
+        <br/>
+    </div>
+    <div id="StormCycles">
+        <div class="song" style="background-color: #444444; color: white;">
+            <audio controls class="news">
+                <source align="50%" src="EyeOfPhoenix-###.mp3" type="audio/mpeg">
+            </audio>
+            <h1>KingTJB | StormCycles (coming soon)</h1>
+        </div>
+        <br/>
+        <br/>
+    </div>
+</body>
+
+</html>

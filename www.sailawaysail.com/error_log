@@ -1,0 +1,8 @@
+[23-Feb-2018 16:07:35 UTC] PHP Warning:  strpos(): Empty needle in /home3/sailawa8/public_html/wp-includes/functions.php on line 4338
+[23-Feb-2018 16:07:35 UTC] PHP Warning:  strpos(): Empty needle in /home3/sailawa8/public_html/wp-includes/functions.php on line 4338
+[23-Feb-2018 16:07:35 UTC] mojo_plugin_activated
+[02-May-2018 15:10:48 UTC] PHP Warning:  fileperms(): stat failed for /home3/sailawa8/public_html/index.php in /home3/sailawa8/public_html/wp-admin/includes/file.php on line 1423
+[17-May-2018 15:08:57 UTC] PHP Warning:  fileperms(): stat failed for /home3/sailawa8/public_html/index.php in /home3/sailawa8/public_html/wp-admin/includes/file.php on line 1423
+[18-May-2018 15:12:37 UTC] PHP Warning:  fileperms(): stat failed for /home3/sailawa8/public_html/index.php in /home3/sailawa8/public_html/wp-admin/includes/file.php on line 1423
+[23-May-2018 15:08:32 UTC] PHP Warning:  fileperms(): stat failed for /home3/sailawa8/public_html/index.php in /home3/sailawa8/public_html/wp-admin/includes/file.php on line 1423
+[24-May-2018 15:23:04 UTC] PHP Warning:  fileperms(): stat failed for /home3/sailawa8/public_html/index.php in /home3/sailawa8/public_html/wp-admin/includes/file.php on line 1423

@@ -1,0 +1,38 @@
+#navigation {
+	list-style-type: none;
+	background-color: skyblue;
+	padding: 20px;
+	border: 4px solid blue;
+	border-radius: 30px;
+}
+
+#navigation li {
+	display: inline;
+	padding: 20px;}
+
+#navigation li a {
+	font-size: 30px;
+	text-decoration: none;
+	font-family: arial;
+	font-weight: bold;
+	color: blue;
+}
+
+#navigation li select {
+	font-size: 30px;
+	background-color: skyblue;
+	background: none;
+	border: none;
+	color: blue;
+	font-weight: bold;
+	-webkit-appearance: none;
+}
+
+#navigation li select option{
+	background-color: skyblue;
+	border: 0px solid red;
+	-webkit: none;
+	font-weight: bold;
+	user-select: none;
+
+}

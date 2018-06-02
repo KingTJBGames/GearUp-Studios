@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<body class="hb1">
+
+	<head>
+		<link rel="stylesheet" href="TJBM.css.1.css">
+		<title>
+			KingTJBMusic | Alert
+		</title>
+		<nav class="menu">
+			<ul class="menu">
+				<li class="menu">
+					<a href="index.html" class="menu">Home </a>
+				</li>
+				<li class="menu">
+					<select id="test" onchange="onSelected()">
+						<option value="Select Song" id="firstopt">Select Song</option>
+						<option value="SuperCell">SuperCell</option>
+						<option value="LaserShow">LaserShow</option>
+						<option value="ElectroBlast">ElectroBlast</option>
+						<option value="SuperCell II">SuperCell II</option>
+						<option value="Alert">Alert</option>
+						<option value="Statical">Statical</option>
+						<option value="IcyCaves">IcyCaves</option>
+						<option value="FirePower">FirePower</option>
+					</select>
+				</li>
+				<li class="menu">
+					<a href="TJBM.EyeOfPhoenix.html" class="menu">Eye Of Phoenix</a>
+				</li>
+				<li class="menu">
+					<a href="TJBM.singles.html" class="menu">Singles</a>
+				</li>
+				<li class="menu">
+					<a href="TJBM.search.html" class="menu" target="_blank">Search </a>
+				</li>
+				<li class="menu" style="font-size: 20px; color: #3143ff;" align="90%">Coming Soon... </li>
+			</ul>
+		</nav>
+		<style>
+			#test {
+				background-color: #0000CC;
+				color: #b5f9ff;
+				border: 0px none red;
+				width: 214px;
+				height: 40px;
+				font-size: 30px;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				font-weight: bold;
+			}
+		</style>
+		<script>
+			function onSelected() {
+				var index = document.getElementById("test").selectedIndex
+				var option = document.getElementById("test").options[index]
+				var albumElm = document.getElementById("albumDownloads")
+				var firstOption = document.getElementById('firstopt')
+				firstOption.text = "All"
+
+				var songs = document.getElementsByClassName('song')
+
+				if (option.value === 'Select Song') {
+					albumElm.style.display = 'block'
+				} else {
+					albumElm.style.display = 'none'
+				}
+
+
+				Array.from(songs).forEach((s) => {
+					var song = s.parentElement
+					if (song.id === option.value || option.value === 'Select Song') {
+						song.style.display = "block"
+					} else {
+						song.style.display = "none"
+					}
+				})
+
+			}
+		</script>
+	</head>
+	<div class="AF" id="albumDownloads">
+		<center>
+			<h1>
+				Alert Album Downloads
+			</h1>
+		</center>
+		<ul>
+			<li>
+				<a class="AF" href="Alert-SuperCell.mp3" download>SuperCell </a>
+			</li>
+			<li>
+				<a class="AF" href="Alert-LaserShow.mp3" download>LaserShow </a>
+			</li>
+			<li>
+				<a class="AF" href="Alert-ElectroBlast.mp3" download>ElectroBlast </a>
+			</li>
+			<li>
+				<a class="AF" href="Alert-SuperCell-II.mp3" download>SuperCell II </a>
+			</li>
+			<li>
+				<a class="AF" href="Alert-Alert.mp3" download>Alert </a>
+			</li>
+			<li>
+				<a class="AF" href="Alert-Statical-ft.-NeylandHill.mp3" download>Statical </a>
+			</li>
+			<li>
+				<a class="AF" href="Alert-IcyCaves.mp3" download>IcyCaves </a>
+			</li>
+			<li>
+				<a class="AF" href="Alert-FirePower.mp3" download>FirePower </a>
+			</li>
+		</ul>
+	</div>
+	<br/>
+	<br/>
+	<div id="SuperCell">
+		<div class="song" style="background-color: red; color: #ff55ff;">
+			<audio controls class="news">
+				<source align="50%" src="Alert-SuperCell.mp3" type="audio/mpeg">
+			</audio>
+			<h1>KingTJB | SuperCell</h1>
+		</div>
+		<br/>
+		<br/>
+	</div>
+	<div id="LaserShow">
+		<div class="song" style="background-color: #ffc700; color: #846e1d;">
+			<audio controls class="news">
+				<source align="50%" src="Alert-LaserShow.mp3" type="audio/mpeg">
+			</audio>
+			<h1>KingTJB | LaserShow</h1>
+		</div>
+		<br/>
+		<br/>
+	</div>
+	<div id="ElectroBlast">
+		<div class="song" style="background-color: #14ff0c; color: #0c39ff;">
+			<audio controls class="news">
+				<source align="50%" src="Alert-ElectroBlast.mp3" type="audio/mpeg">
+			</audio>
+			<h1>KingTJB | ElectroBlast</h1>
+		</div>
+		<br/>
+		<br/>
+	</div>
+	<div id="SuperCell II">
+		<div class="song" style="background-color: #ff6d0c; color: #ff0000;">
+			<audio controls class="news">
+				<source align="50%" src="Alert-SuperCell-II.mp3" type="audio/mpeg">
+			</audio>
+			<h1>KingTJB | SuperCell II</h1>
+		</div>
+		<br/>
+		<br/>
+	</div>
+	<div id="Alert">
+		<div class="song" style="background-color: blue; color: #ff0000;">
+			<audio controls class="news">
+				<source align="50%" src="Alert-Alert.mp3" type="audio/mpeg">
+			</audio>
+			<h1>KingTJB | Alert</h1>
+		</div>
+		<br/>
+		<br/>
+	</div>
+	<div id="Statical">
+		<div class="song" style="background-color: #444444; color: #ffffff;">
+			<audio controls class="news">
+				<source align="50%" src="Alert-Statical-ft.-NeylandHill.mp3" type="audio/mpeg">
+			</audio>
+			<h1>KingTJB | Statical</h1>
+		</div>
+		<br/>
+		<br/>
+	</div>
+	<div id="IcyCaves">
+		<div class="song" style="background-color: #000099; color: skyblue;">
+			<audio controls class="news">
+				<source align="50%" src="Alert-IcyCaves.mp3" type="audio/mpeg">
+			</audio>
+			<h1>KingTJB | IcyCaves</h1>
+		</div>
+		<br/>
+		<br/>
+	</div>
+	<div id="FirePower">
+		<div class="song" style="background-color: #8c542f; color: red;">
+			<audio controls class="news">
+				<source align="50%" src="Alert-FirePower.mp3" type="audio/mpeg">
+			</audio>
+			<h1>KingTJB | FirePower</h1>
+		</div>
+		<br/>
+		<br/>
+	</div>
+</body>
+
+</html>

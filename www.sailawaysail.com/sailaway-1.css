@@ -1,0 +1,46 @@
+body {
+	/*background-color: #7adbff;*/
+	font-family: Sans-Serif;
+}
+
+nav ul {
+	list-style-type: none;
+	background-color: #1e4bff;
+	border: 0.3vw solid black;
+	border-radius: 2.4vw;
+	font-weight: bold;
+	padding: 1.1vw;
+}
+
+nav ul li {
+	display: inline;
+	padding-right: 1.2vw;
+	padding-left: 1.2vw;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: white;
+	font-size: 2.4vw
+}
+
+h1 {
+	padding: 0px;
+	font-size: 4.0vw;
+}
+
+#ussailing-link {
+	color: #11b24c;
+	font-weight: bold;
+	font-size: 1.5vw;
+	text-decoration: none;
+}
+
+#ultimatesailing-link {
+	text-decoration: none; 
+	color: blue;
+}
+
+h6 {
+	font-size: 2.1vw
+}
