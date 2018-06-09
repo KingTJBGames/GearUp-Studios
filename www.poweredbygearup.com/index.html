@@ -40,18 +40,21 @@
 			<select id="games" onchange="hmdv('games')" ondblclick="window.location.href = 'games.html'">
 				<option class="games" id="G1" value="games.html">Games</option>
 				<option class="games" id="G2" value="games.kingtjb.html">KingTJB</option>
+				<option class="games" id="G3" value="games.colplanz.html">ColPlanz</option>
 			</select>
 		</li>
 		<li>
 			<select id="art" onchange="hmdv('art')" ondblclick="window.location.href = 'art.html'">
 				<option class="art" id="A1" value="art.html">Art</option>
 				<option class="art" id="A2" value="art.kingtjb.html">KingTJB</option>
+				<option class="art" id="A3" value="art.colplanz.html">ColPlanz</option>
 			</select>
 		</li>
 		<li>
 			<select id="videos" onchange="hmdv('videos')" ondblclick="window.location.href = 'videos.html'">
 				<option class="videos" id="V1" value="videos.html">Videos</option>
 				<option class="videos" id="V2" value="videos.kingtjb.html">KingTJB</option>
+				<option class="videos" id="V3" value="videos.colplanz.html">ColPlanz</option>
 			</select>
 		</li>
 	</ul>
@@ -62,6 +65,58 @@
 		<h1 class="title">GearUp</h1>
 		<h1>Welcome to the Matrix</h1>
 	</center>
+	<!--New Projects Below-->
+	<div class="video" id="howtoeatamarshmellowcolplanz" onclick="showHideHandler('video2')">
+			How to Eat a Marshmellow by
+			<a href="videos.colplanz.html">ColPlanz</a>
+			<div id="video2" style="display: none;"> 
+				<br>
+				<center><iframe width="560" height="315" src="https://www.youtube.com/embed/F9B9Qb0kJpA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+			</div>
+		</div><br><br>
+	<div class="art-project" id="eofAlbumCover" onclick="showHideHandler('art3')">
+			Eye Of Phoenix Album Cover by
+			<a href="art.kingtjb.html">KingTJB</a>
+			<div id="art3" style="display: none;"> 
+				<br>
+				<center><img src="art/3.png" width="30%" height="30%"></center>
+			</div>
+		</div><br><br>
+		<div class="art-project" id="bewareAlbumCover" onclick="showHideHandler('art2')">
+				Beware Cover by
+				<a href="art.kingtjb.html">KingTJB</a>
+				<div id="art2" style="display: none;"> 
+					<br>
+					<center><img src="art/2.png" width="30%" height="30%"></center>
+				</div>
+			</div><br><br>
+	<div class="video" id="bewareBeta" onclick="showHideHandler('video1')">
+			Beware(BETA) by
+			<a href="videos.kingtjb.html">KingTJB</a>
+			<div id="video1" style="display: none;"> 
+				<br>
+				<center><iframe allowtransparency="true" width="485" height="402" src="//scratch.mit.edu/projects/embed/224209767/?autostart=false" frameborder="0" allowfullscreen></iframe></center>
+			</div>
+		</div><br><br>
+	<div class="game" id="levelupgame" onclick="showHideHandler('game2')">
+			LevelUp by
+			<a href="games.kingtjb.html">KingTJB</a>
+			<div id="game2" style="display: none;">
+				<br>
+				<center>
+					<iframe allowtransparency="true" width="485" height="402" src="//scratch.mit.edu/projects/embed/195715285/?autostart=false"
+					 frameborder="0" allowfullscreen></iframe>
+				</center>
+			</div>
+		</div><br><br>
+	<div class="game" id="starshooter" onclick="showHideHandler('game1')">
+			StarShooter by
+			<a href="games.kingtjb.html">KingTJB</a>
+			<div id="game1" style="display: none;"> 
+				<br>
+				<center><iframe allowtransparency="true" width="485" height="402" src="//scratch.mit.edu/projects/embed/210031877/?autostart=false" frameborder="0" allowfullscreen></iframe></center>
+			</div>
+		</div><br><br>
 	<div class="art-project" id="alertAlbumCover" onclick="showHideHandler('art1')">
 		Alert Album Cover by
 		<a href="art.kingtjb.html">KingTJB</a>
@@ -69,6 +124,6 @@
 			<br>
 			<center><img src="art/1.jpg" width="30%" height="30%"></center>
 		</div>
-	</div>
+	</div><br><br>
 </body>
 </html>
