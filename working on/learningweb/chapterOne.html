@@ -40,7 +40,9 @@
         console.log('progress...')
         var ae = document.getElementById(optionValue);
         var be = document.getElementsByClassName('lesson');
-        be.style.display = 'none';
+        Array.from(be).forEach((a) => {
+             a.style.display = 'none';
+        })
         ae.style.display = 'block';
         console.log('succesful')
         }
@@ -140,30 +142,39 @@ One, and the p element stands for paragraph
 </div>
 
 <div id="lessonTwo" class="lesson" value="2">
+<h1 class="lessontitle">LESSON 2</h1>
 </div>
 
 <div id="lessonThree" class="lesson" value="3">
+<h1 class="lessontitle">LESSON 3</h1>
 </div>
 
 <div id="lessonFour" class="lesson" value="4">
+<h1 class="lessontitle">LESSON 4</h1>
 </div>
 
 <div id="lessonFive" class="lesson" value="5">
+<h1 class="lessontitle">LESSON 5</h1>
 </div>
 
 <div id="lessonSix" class="lesson" value="6">
+<h1 class="lessontitle">LESSON 6</h1>
 </div>
 
 <div id="lessonSeven" class="lesson" value="7">
+<h1 class="lessontitle">LESSON 7</h1>
 </div>
 
 <div id="lessonEight" class="lesson" value="8">
+<h1 class="lessontitle">LESSON 8</h1>
 </div>
 
 <div id="lessonNine" class="lesson" value="9">
+<h1 class="lessontitle">LESSON 9</h1>
 </div>
 
 <div id="lessonTen" class="lesson" value="10">
+<h1 class="lessontitle">LESSON 10</h1>
 </div>
 
 </body>

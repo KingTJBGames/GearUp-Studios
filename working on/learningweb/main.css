@@ -80,3 +80,7 @@ padding: 6px;
     border-top-width: 8px;
     border-bottom-width: 8px;
 }
+
+#lessonTwo, #lessonThree, #lessonFour, #lessonFive, #lessonSix, #lessonSeven, #lessonEight, #lessonNine, #lessonTen {
+    display: none;
+}        

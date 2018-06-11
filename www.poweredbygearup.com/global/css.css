@@ -1,26 +1,26 @@
 body {
 	background-color: black;
-	padding: 30px;
+	padding: 2.3vw;
 	color: skyblue;
 	font-family: arial;
 }
 
 html {
 	background-color: blue;
-	border: 50px solid #6060ff;
+	border: 4.7vw solid #6060ff;
 	border-right-color: navy;
 	border-left-color: navy;
 }
 
 h1.title {
-	font-size: 60px;
+	font-size: 4.6vw;
 }
 
 .art-project {
-	border: 9px solid;
-	padding: 20px;
-	border-radius: 20px;
-	font-size: 40px;
+	border: 0.6vw solid;
+	padding: 1.8vw;
+	border-radius: 1.55vw;
+	font-size: 3.1vw;
 	font-weight: bold;
 	background-color: red;
 	border-color: firebrick;
@@ -33,9 +33,9 @@ h1.title {
 }
 
 .game {
-	border: 9px solid;
-	padding: 20px;
-	font-size: 40px;
+	border: .8vw solid;
+	padding: 1.55vw;
+	font-size: 3.1vw;
 	font-weight: bold;
 	background-color: blue;
 	border-color: skyblue;
@@ -48,10 +48,10 @@ h1.title {
 }
 
 .video {
-	border: 7px solid;
-	padding: 20px;
-	border-radius: 40px;
-	font-size: 40px;
+	border: 0.55vw solid;
+	padding: 1.55vw;
+	border-radius: 3.1vw;
+	font-size: 3.1vw;
 	font-weight: bold;
 	background-color: green;
 	border-color: lightgreen;
@@ -61,4 +61,8 @@ h1.title {
 .video a {
 	text-decoration: none;
 	color: lightgreen;
+}
+
+h1 {
+	font-size: 2.2vw
 }

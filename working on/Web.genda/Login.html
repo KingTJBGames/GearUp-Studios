@@ -40,9 +40,10 @@ function validateForm() {
   var user=document.login.username.value;
   var user = user.trim();
   var pass = document.login.password.value;
+  var users = [{teachers: [{}]}, {students: [{}]}, {parents: [{}]}, {groups: [{}]}, {schools: [{}]}]
 
   if (user == 'Viviek611' && pass == 'admin') {
-    location.href = "webgenda.html";
+    window.location.href = "index.html";
     return false;
   }
   else {
