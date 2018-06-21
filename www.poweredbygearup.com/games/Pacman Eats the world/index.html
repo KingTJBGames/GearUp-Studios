@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pacman Eats the Eorld</title>
+    <script>
+        function game() {
+            //CONSTANTS
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d')
+            var canvasWidth = 800;
+            var canvasHeight = 600;
+            canvas.width = canvasWidth;
+            canvas.height = canvasHeight;
+            var startScreenGamemode = 0;
+            var playGamemode = 1;
+            var gameOverGamemode = 2;
+            var pacmanWidth = 80;
+            var pacmanHeight = 60;
+            var uparrow = 38;
+            var downarrow = 40
+
+            //PREDEFINED
+            var random = (Math.random() * 530) + 60
+            var gamemode = startScreenGamemode;
+            var pacman = new Image()
+            pacman.src = 'pacman/' + Math.floor(Math.random() * 7) + '.png';
+            var pacmanX = 50;
+            var pacmanY = 280;
+            var speed = 10;
+            var score = 0;
+            var health = 3;
+            var level = 0;
+            setInterval(function() {level = level + 1}, 10000)
+
+            window.addEventListener('keydown', inputHandler)
+            function inputHandler(event) {
+                if (event.keyCode === uparrow) {
+                    pacmanY = pacmanY - speed;
+                } else if (event.keyCode === downarrow) {
+                    pacmanY = pacmanY + speed;
+                }
+            }
+
+            //STARTSCREEN
+            canvas.addEventListener('click', start)
+
+            function start() {
+                gamemode = playGamemode;
+            }
+
+            //LOOP
+            function loop() {
+                update()
+                draw()
+                window.requestAnimationFrame(loop)
+            }
+            loop()
+            //UPDATING
+            function update() {
+                if ((pacmanY + pacmanHeight) < 50) {
+                    pacmanY = 590;
+                } else if (pacmanY > 590) {
+                    pacmanY = pacmanHeight - 67;
+                }
+            }
+
+            //DRAWING
+            function draw() {
+                var orbs = {
+                    yellow: function () {
+                        var orbIsVisible = true;
+                        var x = 700
+                        ctx.fillStyle = 'yellow'
+                        ctx.beginPath()
+                        ctx.arc(x, random, 10, 0, 2 * Math.PI);
+                        ctx.fill()
+                        while (orbIsVisible) {
+                            x = x - 8;
+                            if(x < 0) {
+                                orbIsVisible = false;
+                            }
+
+                        }
+                    },
+                    green: function () { },
+                    blue: function () { },
+                    purple: function () { },
+                    orange: function () { },
+                    red: function () { }
+                }
+
+
+                function scoreboard() {
+                    ctx.fillStyle = '#777';
+                    ctx.fillRect(0, 0, 800, 45)
+                    ctx.font = '40px arial';
+                    ctx.fillStyle = 'skyblue';
+                    ctx.fillText('Score: ' + score, 10, 35)
+                    ctx.fillText('Health: ' + health, 180, 35)
+                    ctx.fillText('Speed: ' + speed / 2, 370, 35)
+                    ctx.fillText('Level: ' + level, 550, 35)
+                }
+
+                ctx.clearRect(0, 0, canvasWidth, canvasHeight)
+                if (gamemode === startScreenGamemode) {
+                    ctx.fillStyle = 'skyblue'
+                    ctx.font = '90px "Bauhaus 93"'
+                    ctx.fillText('Pacman Eats', 130, 100)
+                    ctx.fillText('the World', 210, 200)
+                    ctx.font = '30px arial'
+                    ctx.fillText('powered by gearup', 270, 570)
+                }
+
+                if (gamemode === playGamemode) {
+                    ctx.drawImage(pacman, pacmanX, pacmanY, pacmanWidth, pacmanHeight);
+                    scoreboard()
+                    orbs.yellow()
+                }
+            }
+        } 
+    </script>
+    <style>
+        #canvas {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body onload="game()">
+    <canvas id="canvas"></canvas>
+</body>
+
+</html>

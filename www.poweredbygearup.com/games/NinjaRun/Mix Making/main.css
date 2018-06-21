@@ -1,0 +1,18 @@
+body {
+    background-color: darkgrey;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+input.game {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: lawngreen;
+    background-color: blue;
+    text-shadow: #222222;
+    font-size: 21px;
+    border: 5px solid #777766
+}
+
+#savearea {
+    display: none;
+}

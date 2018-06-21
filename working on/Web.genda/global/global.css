@@ -1,0 +1,10 @@
+#Login {
+    border: 2px solid blue;
+    background-color: blue;
+   }
+
+   #error {
+     border: 2px  solid black;
+     background-color: black;
+     color: white;
+   }
