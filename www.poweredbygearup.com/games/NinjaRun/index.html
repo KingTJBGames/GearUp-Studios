@@ -4,11 +4,17 @@
 <body>
 
     <head>
-        <title>Ninja Run</title>
+				<title>Ninja Run</title>
+				<style>
+					canvas {
+						top: 0; 
+
+					}
+				</style>
         <script>
           //CONSTANTS//
-		  var CANVAS_HEIGHT = 600;
-		  var CANVAS_WIDTH = 800;
+		  var CANVAS_HEIGHT = 800;
+		  var CANVAS_WIDTH = 600;
 		  var PLAYER_WIDTH = 181;
 		  var PLAYER_HEIGHT = 229;
 		  var ROBOT_WIDTH = 141;
@@ -46,9 +52,6 @@
 		  
 		  var bush1Image = new Image();
 		  bush1Image.src = 'bush1.png';
-		  
-		  var pauseImage = new Image();
-		  pauseImage.src = 'pause.png';
 		  
 		  var bush2Image = new Image();
 		  bush2Image.src = 'bush2.png';
@@ -155,31 +158,7 @@
 				spaceKeyIsPressed = false;
 			}
 		  }
-		  
-		  function getPosition(event) {
-			var x = new Number();
-			var y = new Number();
-			var canvas = document.getElementById("canvas");
-
-			if (event.x != undefined && event.y != undefined)
-			{
-			  x = event.x;
-			  y = event.y;
-			}
-			else // Firefox method to get the position
-			{
-			  x = event.clientX + document.body.scrollLeft +
-				  document.documentElement.scrollLeft;
-			  y = event.clientY + document.body.scrollTop +
-				  document.documentElement.scrollTop;
-			}
-
-			x -= canvas.offsetLeft;
-			y -= canvas.offsetTop;
-
-			alert("x: " + x + "  y: " + y);
-		  }
-
+		
 		  //UPDATING//
 		  function update() {
 			if(gamemode != PLAY_GAME_MODE) return;
@@ -322,9 +301,9 @@
 			//game over
 			if(gamemode == GAME_OVER_GAME_MODE) {
 				ctx.fillStyle = 'black';
-				ctx.fillRect(0, 0, 800, 600);
+				ctx.fillRect(0, 0, 80000, 60000);
 				ctx.fillStyle = 'blue';
-				ctx.font = '96px arial'
+				ctx.font = '96px "Bauhaus 93"'
 				ctx.fillText('GAME OVER', 120, 300)
 			}
 			
@@ -333,7 +312,6 @@
 			ctx.fillStyle = 'black';
 			ctx.font = '48px arial';
 			ctx.fillText(playerDistance.toFixed(0) + ' meters', 20, 40)
-			getPosition()
 		  }
 		  
         </script>

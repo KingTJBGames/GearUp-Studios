@@ -21,17 +21,26 @@
             var downarrow = 40
 
             //PREDEFINED
-            var random = (Math.random() * 530) + 60
             var gamemode = startScreenGamemode;
             var pacman = new Image()
-            pacman.src = 'pacman/' + Math.floor(Math.random() * 7) + '.png';
+            pacman.src = 'pacman/' + Math.floor(Math.random() * 8) + '.png';
             var pacmanX = 50;
             var pacmanY = 280;
             var speed = 10;
             var score = 0;
             var health = 3;
-            var level = 0;
-            setInterval(function() {level = level + 1}, 10000)
+            var level = 1;
+            setInterval(function () { level = level + 1 }, 10000)
+
+            function generateRandom(min, max, boolean) {
+                var floor = boolean;
+                if (floor) {
+                    var random = Math.floor((Math.random() + min) * max + 1);
+                } else {
+                    var random = (Math.random()) * (max + 1) + min;
+                }
+                return random;
+            }
 
             window.addEventListener('keydown', inputHandler)
             function inputHandler(event) {
@@ -68,20 +77,17 @@
             //DRAWING
             function draw() {
                 var orbs = {
-                    yellow: function () {
-                        var orbIsVisible = true;
-                        var x = 700
-                        ctx.fillStyle = 'yellow'
-                        ctx.beginPath()
-                        ctx.arc(x, random, 10, 0, 2 * Math.PI);
-                        ctx.fill()
-                        while (orbIsVisible) {
-                            x = x - 8;
-                            if(x < 0) {
-                                orbIsVisible = false;
+                    yellow: {
+                        draw: function() {
+                            for(i = 0; i===0; i++) {
+                                
                             }
-
-                        }
+                            var orb = new Image();
+                            orb.src = 'orbs/yellow.png';
+                            ctx.drawImage(orb, orbs.yellow.x, 400, 30, 30);
+                            orbs.yellow.x -= 8
+                        },
+                        x: 700
                     },
                     green: function () { },
                     blue: function () { },
@@ -115,7 +121,7 @@
                 if (gamemode === playGamemode) {
                     ctx.drawImage(pacman, pacmanX, pacmanY, pacmanWidth, pacmanHeight);
                     scoreboard()
-                    orbs.yellow()
+                    setInterval(orbs.yellow.draw(), 3000)
                 }
             }
         } 
