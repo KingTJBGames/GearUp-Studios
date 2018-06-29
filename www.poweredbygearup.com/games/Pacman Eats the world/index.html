@@ -2,9 +2,17 @@
 <html>
 
 <head>
-    <title>Pacman Eats the Eorld</title>
+    <title>Pacman Eats the World</title>
     <script>
         function game() {
+            //audio
+            var audio = document.createElement('audio');
+            audio.src = 'audio.mp3';
+            audio.loop = true;
+            audio.volume = "1";
+            audio.autoplay = true;
+            document.body.appendChild(audio);
+
             //CONSTANTS
             var canvas = document.getElementById('canvas');
             var ctx = canvas.getContext('2d')
@@ -26,11 +34,12 @@
             pacman.src = 'pacman/' + Math.floor(Math.random() * 8) + '.png';
             var pacmanX = 50;
             var pacmanY = 280;
-            var speed = 10;
+            var speed = 20;
             var score = 0;
-            var health = 3;
+            var health = 4;
             var level = 1;
-            setInterval(function () { level = level + 1 }, 10000)
+
+            setInterval(function () { if (gamemode === playGamemode) { level = level + 1 } }, 10000)
 
             function generateRandom(min, max, boolean) {
                 var floor = boolean;
@@ -41,6 +50,7 @@
                 }
                 return random;
             }
+
 
             window.addEventListener('keydown', inputHandler)
             function inputHandler(event) {
@@ -65,35 +75,149 @@
                 window.requestAnimationFrame(loop)
             }
             loop()
+
             //UPDATING
             function update() {
-                if ((pacmanY + pacmanHeight) < 50) {
-                    pacmanY = 590;
-                } else if (pacmanY > 590) {
-                    pacmanY = pacmanHeight - 67;
+                if (health < 1) {
+                    gamemode = gameOverGamemode;
                 }
             }
 
             //DRAWING
+            var yelloworbx = 0;
+            var yelloworby = (Math.random() * 500) + 30;
+            var redorbx = 0;
+            var redorby = (Math.random() * 500) + 30;
+            var blueorbx = 0;
+            var blueorby = (Math.random() * 500) + 30;
+            var greenorbx = 0;
+            var greenorby = (Math.random() * 500) + 30;
+            var purpleorbx = 0;
+            var purpleorby = (Math.random() * 500) + 30;
+            var orangeorbx = 0;
+            var orangeorby = (Math.random() * 500) + 30;
             function draw() {
                 var orbs = {
                     yellow: {
-                        draw: function() {
-                            for(i = 0; i===0; i++) {
-                                
+                        draw: function () {
+                            if (yelloworbx < -30) {
+                                yelloworbx = orbs.yellow.x
+                                yelloworby = (Math.random() * 500) + 30;
                             }
                             var orb = new Image();
                             orb.src = 'orbs/yellow.png';
-                            ctx.drawImage(orb, orbs.yellow.x, 400, 30, 30);
-                            orbs.yellow.x -= 8
+                            ctx.drawImage(orb, yelloworbx, yelloworby, 30, 30);
+                            yelloworbx -= level + 5
+                            if (((yelloworbx < pacmanX) || ((yelloworbx - 35) < pacmanX)) && (pacmanX < (yelloworbx + 35))) {
+                                if ((pacmanY < yelloworby || pacmanY < (yelloworby + 30)) && ((pacmanY + pacmanHeight) > (yelloworby))) {
+                                    yelloworbx = -30;
+                                    score += 1;
+                                }
+                            }
                         },
-                        x: 700
+                        x: 800,
+                        y: generateRandom(20, 520, false)
                     },
-                    green: function () { },
-                    blue: function () { },
-                    purple: function () { },
-                    orange: function () { },
-                    red: function () { }
+                    green: {
+                        draw: function () {
+                            if (greenorbx < -150) {
+                                greenorbx = orbs.green.x
+                                greenorby = (Math.random() * 500) + 30;
+                            }
+                            var orb = new Image();
+                            orb.src = 'orbs/green.png';
+                            ctx.drawImage(orb, greenorbx, greenorby, 30, 30);
+                            greenorbx -= level + 6;
+                            if (((greenorbx < pacmanX) || (greenorbx - 35) < pacmanX) && (pacmanX < (greenorbx + 35))) {
+                                if ((pacmanY < greenorby || pacmanY < (greenorby + 30)) && ((pacmanY + pacmanHeight) > (greenorby))) {
+                                    greenorbx = -30;
+                                    score += 3;
+                                }
+                            }
+                        },
+                        x: 800,
+                        y: generateRandom(20, 520, false)
+                    },
+                    blue: {
+                        draw: function () {
+                            if (blueorbx < -800) {
+                                blueorbx = orbs.blue.x
+                                blueorby = (Math.random() * 500) + 30;
+                            }
+                            var orb = new Image();
+                            orb.src = 'orbs/blue.png';
+                            ctx.drawImage(orb, blueorbx, blueorby, 30, 30);
+                            blueorbx -= level + 7
+                            if (((blueorbx < pacmanX) || (blueorbx - 35) < pacmanX) && (pacmanX < (blueorbx + 35))) {
+                                if ((pacmanY < blueorby || pacmanY < (blueorby + 30)) && ((pacmanY + pacmanHeight) > (blueorby))) {
+                                    blueorbx = -30;
+                                    score += 5;
+                                }
+                            }
+                        },
+                        x: 800,
+                        y: generateRandom(20, 520, false)
+                    },
+                    purple: {
+                        draw: function () {
+                            if (purpleorbx < -1700) {
+                                purpleorbx = orbs.purple.x
+                                purpleorby = (Math.random() * 500) + 30;
+                            }
+                            var orb = new Image();
+                            orb.src = 'orbs/purple.png';
+                            ctx.drawImage(orb, purpleorbx, purpleorby, 30, 30);
+                            purpleorbx -= level + 9
+                            if (((purpleorbx < pacmanX) || (purpleorbx - 35) < pacmanX) && (pacmanX < (purpleorbx + 35))) {
+                                if ((pacmanY < purpleorby || pacmanY < (purpleorby + 30)) && ((pacmanY + pacmanHeight) > (purpleorby))) {
+                                    purpleorbx = -30;
+                                    health += 1;
+                                }
+                            }
+                        },
+                        x: 800,
+                        y: generateRandom(20, 520, false)
+                    },
+                    orange: {
+                        draw: function () {
+                            if (orangeorbx < -30) {
+                                orangeorbx = orbs.orange.x
+                                orangeorby = (Math.random() * 500) + 30;
+                                health -= 1;
+                            }
+                            var orb = new Image();
+                            orb.src = 'orbs/orange.png';
+                            ctx.drawImage(orb, orangeorbx, orangeorby, 30, 30);
+                            orangeorbx -= level + 6
+                            if (((orangeorbx < pacmanX) || (orangeorbx - 35) < pacmanX) && (pacmanX < (orangeorbx + 35))) {
+                                if ((pacmanY < orangeorby || pacmanY < (orangeorby + 30)) && ((pacmanY + pacmanHeight) > (orangeorby))) {
+                                    orangeorbx = 3200;
+                                }
+                            }
+                        },
+                        x: 3200,
+                        y: generateRandom(20, 520, false)
+                    },
+                    red: {
+                        draw: function () {
+                            if (redorbx < -2500) {
+                                redorbx = orbs.yellow.x
+                                redorby = (Math.random() * 500) + 30;
+                            }
+                            var orb = new Image();
+                            orb.src = 'orbs/red.png';
+                            ctx.drawImage(orb, redorbx, redorby, 30, 30);
+                            redorbx -= level + 5
+                            if (((redorbx < pacmanX) || (redorbx - 35) < pacmanX) && (pacmanX < (redorbx + 35))) {
+                                if ((pacmanY < redorby || pacmanY < (redorby + 30)) && ((pacmanY + pacmanHeight) > (redorby))) {
+                                    redorbx = -30;
+                                    health -= 1;
+                                }
+                            }
+                        },
+                        x: 800,
+                        y: generateRandom(20, 520, false)
+                    }
                 }
 
 
@@ -103,9 +227,8 @@
                     ctx.font = '40px arial';
                     ctx.fillStyle = 'skyblue';
                     ctx.fillText('Score: ' + score, 10, 35)
-                    ctx.fillText('Health: ' + health, 180, 35)
-                    ctx.fillText('Speed: ' + speed / 2, 370, 35)
-                    ctx.fillText('Level: ' + level, 550, 35)
+                    ctx.fillText('Health: ' + health, 250, 35)
+                    ctx.fillText('Level: ' + level, 500, 35)
                 }
 
                 ctx.clearRect(0, 0, canvasWidth, canvasHeight)
@@ -119,22 +242,65 @@
                 }
 
                 if (gamemode === playGamemode) {
+                    orbs.yellow.draw()
+                    orbs.green.draw()
+                    orbs.blue.draw()
+                    orbs.purple.draw()
+                    orbs.orange.draw()
+                    orbs.red.draw()
                     ctx.drawImage(pacman, pacmanX, pacmanY, pacmanWidth, pacmanHeight);
                     scoreboard()
-                    setInterval(orbs.yellow.draw(), 3000)
                 }
+
+                if (gamemode === gameOverGamemode) {
+                    ctx.fillStyle = 'red'
+                    ctx.font = '90px sans-serif ';
+                    ctx.fillText('GAME OVER', 110, 200);
+                    ctx.font = '50px sans-serif ';
+                    ctx.fillText('Score: ' + score, 90, 400);
+                    ctx.fillText('Level: ' + level, 500, 400);
+
+                    canvas.addEventListener('click', restart)
+
+                    function restart() {
+                        location.reload();
+                    }
+
+                }
+
             }
+
+            if (gamemode === gameOverGamemode) {
+                ctx.fillStyle = 'red'
+                ctx.font = '90px arial';
+                ctx.fillText('GAME OVER', 130, 100)
+            }
+
+            function getMousePos(canvas, evt) {
+                var rect = canvas.getBoundingClientRect();
+                return {
+                    y: evt.clientY - rect.top
+                };
+            }
+            window.addEventListener('mousemove', function (evt) {
+                var mousePos = getMousePos(window, evt);
+                pacmanY = mousePos.y;
+            }, false);
+
         } 
     </script>
     <style>
-        #canvas {
+        #canvas,
+        body {
             background-color: black;
         }
     </style>
 </head>
 
 <body onload="game()">
-    <canvas id="canvas"></canvas>
+    <center>
+        <canvas id="canvas"></canvas>
+    </center>
 </body>
 
 </html>
