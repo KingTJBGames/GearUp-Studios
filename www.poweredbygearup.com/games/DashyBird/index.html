@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
-	<body>
-		<head>
-		<link rel="stylesheet" href="styles.css">
-			<script src="script.js">
-			</script>
-			<title>
-			DashyBird 1.0
-			</title>
-		</head>
-	</body>
+
+<head>
+	<link rel="stylesheet" href="styles.css">
+	<script src="script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.3/fabric.min.js"></script>
+	<title>
+		DashyBird 1.0
+	</title>
+</head>
+
+<body onload="run()">
+	<canvas id="canvas"></canvas>
+	<img src="images/startscreen.png"  id="startscreen">
+	<img src="images/level-icons/l1.png" id="l1ico">
+	<img src="images/level-icons/l2.png" id="l2ico">
+	<img src="images/level-icons/l3.png" id="l3ico">
+	<img src="images/level-icons/l4.png" id="l4ico">
+	<img src="images/level-icons/l5.png" id="l5ico">
+	<audio loop id="menuloop" src="audio/menuloop.mp3"></audio>
+	<audio id="1m" src="audio/supercell.mp3"></audio>
+	<audio id="2m" src="audio/icycaves.mp3"></audio>
+	<audio id="3m" src="audio/alert.mp3"></audio>
+	<audio id="4m" src="audio/firepower.mp3"></audio>
+	<audio id="5m" src="audio/supercell2.mp3"></audio>
+</body>
+
 </html>
