@@ -9,21 +9,6 @@
   <script src="menu/menu.js"></script>
   <script src="global/global.js"></script>
   <script src="register/register.js"></script>
-  <script>
-    function validateForm() {
-      var user = document.login.username.value;
-      var user = user.trim();
-      var pass = document.login.password.value;
-
-      if (user == 'test' && pass == '') {
-        window.location.href = "agenda.html";
-        return false;
-      } else {
-        document.getElementById('error').innerHTML = "Please enter a correct username and password";
-        return false;
-      }
-    }
-  </script>
 </head>
 
 <body>
@@ -57,19 +42,36 @@
       </div>
     </div>
   </div>
-  <p>login</p>
-  <p>regsister</p>
-  <p>student</p>
-  <p>parent</p>
-  <p>teacher</p>
-  <p>school</p>
-  <p>group</p>
+  <div id="logTypeChoose">
+    <div id="loginOrRegister">
+      <p id="acselLogin" class="registerTypeSelect">login</p>
+      <p id="acselRegister" class="registerTypeSelect">regsister</p>
+    </div>
+    <div id="loginType">
+      <p id="acselStudent" class="registerSelect" value="studentMode">student</p>
+      <p id="acselParent" class="registerSelect" value="parentMode">parent</p>
+      <p id="acselTeacher" class="registerSelect" value="teacherMode">teacher</p>
+      <p id="acselSchool" class="registerSelect" value="schoolMode">school</p>
+      <p id="acselGroup" class="registerSelect" value="groupMode">group</p>
+    </div>
+  </div>
   <form name="login" onsubmit="return validateForm();">
-    username
-    <input type="text" name="username" required>
-    <br> password
-    <input type="password" name="password" required>
+    <div id="usernameLoginInput">username
+      <input type="text" name="username" required>
+    </div>
     <br>
+    <div id="passwordLoginInput">password
+      <input type="password" name="password" required>
+    </div>
+    <br>
+    <div id="schoolCodeLoginInput">School Code
+      <input type="password" name="schoolCode" required>
+    </div>
+    <br>
+    <div id="groupCodeLoginInput">Group Code
+      <input type="password" name="groupCode" required>
+      <br>
+    </div>
     <input id="Login" type="submit" value="login">
   </form>
 </body>

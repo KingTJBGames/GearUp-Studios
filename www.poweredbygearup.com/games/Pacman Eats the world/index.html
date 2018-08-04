@@ -25,21 +25,18 @@
             var gameOverGamemode = 2;
             var pacmanWidth = 80;
             var pacmanHeight = 60;
-            var uparrow = 38;
-            var downarrow = 40
-
+			
             //PREDEFINED
             var gamemode = startScreenGamemode;
             var pacman = new Image()
             pacman.src = 'pacman/' + Math.floor(Math.random() * 8) + '.png';
             var pacmanX = 50;
             var pacmanY = 280;
-            var speed = 20;
             var score = 0;
             var health = 4;
             var level = 1;
 
-            setInterval(function () { if (gamemode === playGamemode) { level = level + 1 } }, 10000)
+            setInterval(function () { if (gamemode === playGamemode) { level = level + 1 } }, 10000);
 
             function generateRandom(min, max, boolean) {
                 var floor = boolean;
