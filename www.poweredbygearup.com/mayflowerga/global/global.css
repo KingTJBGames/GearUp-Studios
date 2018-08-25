@@ -2,10 +2,8 @@
 
 html {
 	font-family: 'playfair display';
-	margin: 70px;
-	padding: 2px;
-	padding-bottom: 0px;
-	margin-bottom: none;
+	margin: 72px;
+	padding-bottom: 112px;
 	font-size: 22px;
 }
 
@@ -28,4 +26,10 @@ footer {
    bottom: 0;
    width: 100%;
    background-color: black;
+   padding:2px;
+}
+
+body {
+	padding: 30px;
+	padding-right: 20px;
 }

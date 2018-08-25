@@ -10,7 +10,6 @@
             audio.src = 'audio.mp3';
             audio.loop = true;
             audio.volume = "1";
-            audio.autoplay = true;
             document.body.appendChild(audio);
 
             //CONSTANTS
@@ -29,14 +28,18 @@
             //PREDEFINED
             var gamemode = startScreenGamemode;
             var pacman = new Image()
-            pacman.src = 'pacman/' + Math.floor(Math.random() * 8) + '.png';
+			var imune = false;
+			var pacmanColor = Math.floor(Math.random() * 8);
+            pacman.src = 'pacman/' + pacmanColor + '.png';
             var pacmanX = 50;
             var pacmanY = 280;
             var score = 0;
             var health = 4;
             var level = 1;
-
+			
+			//Intervals
             setInterval(function () { if (gamemode === playGamemode) { level = level + 1 } }, 10000);
+			setInterval(function(){if(imune){if(pacmanColor === 7) {pacmanColor = 1} else {pacmanColor += 1}}}, 100);
 
             function generateRandom(min, max, boolean) {
                 var floor = boolean;
@@ -78,11 +81,20 @@
                 if (health < 1) {
                     gamemode = gameOverGamemode;
                 }
+				
             }
 
             //DRAWING
             var yelloworbx = 0;
             var yelloworby = (Math.random() * 500) + 30;
+			var applex = 0;
+            var appley = (Math.random() * 500) + 30;
+			var bananax = 0;
+            var bananay = (Math.random() * 500) + 30;
+			var cherryx = 0;
+            var cherryy = (Math.random() * 500) + 30;
+			var strawberryx = 0;
+            var strawberryy = (Math.random() * 500) + 30;
             var redorbx = 0;
             var redorby = (Math.random() * 500) + 30;
             var blueorbx = 0;
@@ -94,6 +106,7 @@
             var orangeorbx = 0;
             var orangeorby = (Math.random() * 500) + 30;
             function draw() {
+				pacman.src = 'pacman/' + pacmanColor + '.png';
                 var orbs = {
                     yellow: {
                         draw: function () {
@@ -180,7 +193,9 @@
                             if (orangeorbx < -30) {
                                 orangeorbx = orbs.orange.x
                                 orangeorby = (Math.random() * 500) + 30;
-                                health -= 1;
+								if(!imune) {
+									health -= 1;
+								}
                             }
                             var orb = new Image();
                             orb.src = 'orbs/orange.png';
@@ -208,11 +223,98 @@
                             if (((redorbx < pacmanX) || (redorbx - 35) < pacmanX) && (pacmanX < (redorbx + 35))) {
                                 if ((pacmanY < redorby || pacmanY < (redorby + 30)) && ((pacmanY + pacmanHeight) > (redorby))) {
                                     redorbx = -30;
-                                    health -= 1;
+									if(!imune) {
+										health -= 1;
+									}
+									pacman.src = 'pacman/' + 1 + '.png';
+									setTimeout(function(){pacman.src = 'pacman/' + pacmanColor + '.png'}, 1000)
                                 }
                             }
                         },
                         x: 800,
+                        y: generateRandom(20, 520, false)
+                    },
+					apple: {
+                        draw: function () {
+                            if (applex < -30) {
+                                applex = orbs.apple.x
+                                appley = (Math.random() * 500) + 30;
+                            }
+                            var orb = new Image();
+                            orb.src = 'fruit/apple.png';
+                            ctx.drawImage(orb, applex, appley, 60, 60);
+                            applex -= level + 8 
+                            if (((applex < pacmanX) || ((applex - 35) < pacmanX)) && (pacmanX < (applex + 35))) {
+                                if ((pacmanY < appley || pacmanY < (appley + 30)) && ((pacmanY + pacmanHeight) > (appley))) {
+                                    applex = -3000;
+                                    score += 50;
+                                }
+                            }
+                        },
+                        x: 18000,
+                        y: generateRandom(20, 520, false)
+                    },
+					banana: {
+                        draw: function () {
+                            if (bananax < -30) {
+                                bananax = orbs.banana.x
+                                bananay = (Math.random() * 500) + 30;
+                            }
+                            var orb = new Image();
+                            orb.src = 'fruit/banana.png';
+                            ctx.drawImage(orb, bananax, bananay, 60, 60);
+                            bananax -= level + 9
+                            if (((bananax < pacmanX) || ((bananax - 35) < pacmanX)) && (pacmanX < (bananax + 35))) {
+                                if ((pacmanY < bananay || pacmanY < (bananay + 30)) && ((pacmanY + pacmanHeight) > (bananay))) {
+                                    bananax = -3000;
+                                    health += 5;
+                                }
+                            }
+                        },
+                        x: 36000,
+                        y: generateRandom(20, 520, false)
+                    },
+					cherry: {
+                        draw: function () {
+                            if (cherryx < -30) {
+                                cherryx = orbs.cherry.x
+                                cherryy = (Math.random() * 500) + 30;
+                            }
+                            var orb = new Image();
+                            orb.src = 'fruit/cherry.png';
+                            ctx.drawImage(orb, cherryx, cherryy, 60, 60);
+                            cherryx -= level + 8
+                            if (((cherryx < pacmanX) || ((cherryx - 35) < pacmanX)) && (pacmanX < (cherryx + 35))) {
+                                if ((pacmanY < cherryy || pacmanY < (cherryy + 30)) && ((pacmanY + pacmanHeight) > (cherryy))) {
+                                    cherryx = -3000;
+                                    health += 2;
+									score += 2;
+									pacmanColor = Math.floor(Math.random() * 8)
+                                }
+                            }
+                        },
+                        x: 24000,
+                        y: generateRandom(20, 520, false)
+                    },
+					strawberry: {
+                        draw: function () {
+                            if (strawberryx < -30) {
+                                strawberryx = orbs.strawberry.x
+                                strawberryy = (Math.random() * 500) + 30;
+                            }
+                            var orb = new Image();
+                            orb.src = 'fruit/strawberry.png';
+                            ctx.drawImage(orb, strawberryx, strawberryy, 60, 60);
+                            strawberryx -= level + 8
+                            if (((strawberryx < pacmanX) || ((strawberryx - 35) < pacmanX)) && (pacmanX < (strawberryx + 35))) {
+                                if ((pacmanY < strawberryy || pacmanY < (strawberryy + 30)) && ((pacmanY + pacmanHeight) > (strawberryy))) {
+                                    strawberryx = -3000;
+                                    imune = true;
+									setTimeout(function(){imune = false}, 5000)
+                                }
+                            }
+                        },
+                        x: 32000,
                         y: generateRandom(20, 520, false)
                     }
                 }
@@ -245,6 +347,10 @@
                     orbs.purple.draw()
                     orbs.orange.draw()
                     orbs.red.draw()
+					orbs.apple.draw()
+					orbs.banana.draw()
+					orbs.cherry.draw()
+					orbs.strawberry.draw()
                     ctx.drawImage(pacman, pacmanX, pacmanY, pacmanWidth, pacmanHeight);
                     scoreboard()
                 }
