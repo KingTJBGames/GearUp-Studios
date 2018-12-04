@@ -5,12 +5,12 @@
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: lightcoral;
+    background-color: rgb(0, 136, 255);
     list-style-type: none;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 0px;
-    border: 2px solid red;
+    border: 2px solid rgb(0, 76, 255);
     border-right: none;
   }
 
@@ -21,10 +21,11 @@
     color: #818181;
     display: block;
     transition: 0.3s;
+    -webkit-filter: brightness(101%);
   }
 
   .sidenav img:hover {
-    -webkit-filter: brightness(251%);
+    -webkit-filter: brightness(351%);
   }
   
   .sidenav img {

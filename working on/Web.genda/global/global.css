@@ -4,7 +4,8 @@
    }
 
    html {
-     background-color: rgba(206, 21, 21, 0.877);
+     background-color: rgb(173, 255, 252);
+     font-family: 'Source Sans Pro', sans-serif;
    }
 
    #error {
@@ -15,13 +16,11 @@
 
    #Title {
     text-align: center;
-    font-family: sans-serif;
-    color: lightblue;
+    color: rgb(43, 181, 36);
     font-size: 40px;
   }
 
   .instruct {
-    font-family: sans-serif;
     font-size: 20px;
     margin-left: 3px;
     margin-right: 3px;
